@@ -1,0 +1,23 @@
+*{
+    background-color: lavender;
+    color: purple;
+    font-family: Arial;
+    margin: 0;
+}
+header{
+    background-color: rgb(181, 108, 233);
+    color: whitesmoke;
+    padding: 10px;
+    font-size: 16pt;
+}
+footer{
+    background-color: rgb(181, 108, 233);
+    color: whitesmoke;
+    padding: 10px;
+    font-size: 16pt;
+    font-style: italic;
+    text-align: left;
+}
+a{
+    text-decoration: none;
+}
