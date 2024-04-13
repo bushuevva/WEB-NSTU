@@ -16,7 +16,7 @@
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a + b;
-            alert('Сумма ' + a + ' и ' + b + ' равна ' + result)
+            alert('Сумма чисел ' + a + ' и ' + b + ' равна ' + result)
         }
         function showAuthor(){
             let author = 'Автор страницы:\nБушуева Ирина Андреевна'
@@ -24,6 +24,33 @@
         }
         function foot(){
             alert('Приветствую вас на моей странице!')
+        }
+        function showSubstract() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность чисел ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showMultipl() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение чисел ' + a + ' и ' + b + ' равно ' + result);
+        }
+        function showDevis() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление чисел ' + a + ' и ' + b + ' равно ' + result);
         }
     </script>
     <style>
@@ -52,6 +79,9 @@
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showSubstract()">Найти разность чисел</div>
+        <div class="message" onclick="showMultipl()">Найти произведение чисел</div>
+        <div class="message" onclick="showDevis()">Найти деление чисел</div>
         <div class="message" onclick="showAuthor()"> Узнать, кто автор страницы</div>
 
     </main>
