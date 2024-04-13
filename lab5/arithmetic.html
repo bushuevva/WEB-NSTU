@@ -52,6 +52,13 @@
             let result = a / b;
             alert('Деление чисел ' + a + ' и ' + b + ' равно ' + result);
         }
+        function changeOutput( buttonNum, backColor, textColor, Border){
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = Border;
+        }
     </script>
     <style>
         .message{
@@ -66,6 +73,11 @@
         }
         header , footer{
             cursor: pointer;
+        }
+        #output{
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
         }
     </style>
 </head>
@@ -83,6 +95,15 @@
         <div class="message" onclick="showMultipl()">Найти произведение чисел</div>
         <div class="message" onclick="showDevis()">Найти деление чисел</div>
         <div class="message" onclick="showAuthor()"> Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'white', 'purple', '2px solid purple')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'green', 'white', '2px dotted white')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'white', 'blue', '2px solid blue')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'orange', 'white','2px dotted white')">
+        </div>
+
+        <div id="output"></div>
 
     </main>
 
