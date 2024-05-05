@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бушуева Ирина Андреевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png" type="image/x-icon">
+    <style>
+
+    </style>
+    <script>
+        function filter(){
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color == 'Белый' && type == 'Футболка'){
+                wear.src = 'white_t.jpeg';
+            }
+            else if (color == 'Серый' && type == 'Футболка'){
+                wear.src = 'gray_t.jpeg';
+            }
+            else if (color == 'Черный' && type == 'Футболка'){
+                wear.src = 'black_t.jpeg';
+            }
+            else if (color == 'Белый' && type == 'Поло'){
+                wear.src = 'white_p.webp';
+            }
+            else if (color == 'Серый' && type == 'Поло'){
+                wear.src = 'gray_p.jpeg';
+            }
+            else if (color == 'Черный' && type == 'Поло'){
+                wear.src = 'black_p.jpeg';
+            }
+            else if (color == 'Белый' && type == 'Худи'){
+                wear.src = 'white_h.jpeg';
+            }
+            else if (color == 'Серый' && type == 'Худи'){
+                wear.src = 'gray_h.jpeg';
+            }
+            else if (color == 'Черный' && type == 'Худи'){
+                wear.src = 'black_h.png';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    <main>
+        <div>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Белый</option>
+                <option>Серый</option>
+                <option>Черный</option>
+            </select> <br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Худи</option>
+            </select> <br>
+
+            <button onclick="filter()">OK</button> <br>
+
+            <img src="" id="wear" width="300px">
+        </div>
+    </main>
+    <footer>
+        &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
