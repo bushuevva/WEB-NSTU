@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бушуева Ирина Андреевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png" type="image/x-icon">
+    <style>
+        .color{
+            border: 1px solid;
+            padding: 40px;
+            width: 250px;
+            text-align: center;
+            background-color: yellow;
+            cursor: pointer;
+            transition: 1s ease-in-out;
+        }
+    </style>
+    <script>
+        function changeColor(div){
+            if (div.style.backgroundColor == 'yellow'){
+                div.style.backgroundColor = 'red'
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'Красный'
+            }
+            else if (div.style.backgroundColor == 'red'){
+                div.style.backgroundColor = 'white'
+                div.style.color = 'red';
+                document.getElementById('color-name').innerHTML = 'Белый'
+            }
+            else if (div.style.backgroundColor == 'white'){
+                div.style.backgroundColor = 'green'
+                div.style.color = 'palevioletred';
+                document.getElementById('color-name').innerHTML = 'Зеленый'
+            }
+            else if (div.style.backgroundColor == 'green'){
+                div.style.backgroundColor = 'palevioletred'
+                div.style.color = 'yellow';
+                document.getElementById('color-name').innerHTML = 'Розовый'
+            }
+            else if (div.style.backgroundColor == 'palevioletred'){
+                div.style.backgroundColor = 'deepskyblue'
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'Голубой'
+            }
+            else {
+                div.style.backgroundColor = 'yellow'
+                div.style.color = 'deepskyblue';
+                document.getElementById('color-name').innerHTML = 'Желтый'
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">Желтый</span> <br>
+            Сделайте двойной щелчок, чтобы сменить цвет
+        </div>
+    </main>
+    <footer>
+        &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
