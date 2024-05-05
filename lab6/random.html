@@ -21,6 +21,13 @@
             width: 200px;
             margin: 5px;
         }
+        .rules{
+            background-color: whitesmoke;
+            border-radius: 15px;
+            width: 1000px;
+            padding: 10px;
+            margin-top: 50px;
+        }
     </style>
     <script>
         let number;
@@ -66,6 +73,16 @@
             count = 0;
             number = Math.floor( Math.random() * 100 ) + 1 ;
         }
+        function showRules () {
+            document.querySelector('.rule').style.display = 'block';
+            document.querySelector('.show').style.display = 'none';
+            document.querySelector('.hide').style.display = 'block';
+        }
+        function hideRules () {
+            document.querySelector('.rule').style.display = 'none';
+            document.querySelector('.hide').style.display = 'none';
+            document.querySelector('.show').style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -101,6 +118,19 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
+
+        <div class="rules">
+            <button class="show" onclick="showRules()">Показать правила игры</button>
+            <button class="hide" onclick="hideRules()" style="display: none;">Скрыть правила игры</button>
+            <ol type="A" class="rule" style="display: none;">
+                <li>Cначала нажмите на кнопку "сыграть в игру"</li>
+                <li>Попробуйте угадать число</li>
+                <li>Вводите число строго в диапазоне от 1 до 100</li>
+                <li>Нажмите на кнопку "угадать"</li>
+                <li>Если захотите еще раз сыграть, нажмите на кнопку "сыграть еще раз"</li>
+            </ol>
+        </div>
+
     </main>
     <footer>
         &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
