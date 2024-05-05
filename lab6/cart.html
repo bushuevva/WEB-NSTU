@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бушуева Ирина Андреевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png" type="image/x-icon">
+    <style>
+        table{
+            margin: 20px auto;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        p{
+            margin: 20px ;
+            text-align: center;
+        }
+        button{
+            margin-left: 550px;
+        }
+        th, td {
+            border: 1px solid;
+            padding: 5px 10px;
+        }
+    </style>
+    <script>
+        function buy(){
+            let balans = document.querySelector('.balans');
+            let milk = document.querySelector('.milk');
+            let bread = document.querySelector('.bread');
+            let eggs = document.querySelector('.eggs');
+            let cheese = document.querySelector('.cheese');
+            let tomato = document.querySelector('.tomato');
+            let cucumber = document.querySelector('.cucumber');
+            let tea = document.querySelector('.tea');
+            let sour_cr = document.querySelector('.sour_cr');
+
+            let a = parseInt(milk.value);
+            let b = parseInt(bread.value);
+            let c = parseInt(eggs.value);
+            let d = parseInt(cheese.value);
+            let e = parseInt(cucumber.value);
+            let f = parseInt(tomato.value);
+            let g = parseInt(tea.value);
+            let h = parseInt(sour_cr.value);
+            
+            let summa = a*90 + b*50 + c*100 + d*200 + e*150 + f*250 + g*150 +h*80;
+            let sd = balans.value - summa;
+            if (summa > balans.value){
+                document.querySelector('.output').innerHTML = 'У вас недостаточно денег!';
+            }
+            else if (summa == 0){
+                document.querySelector('.output').innerHTML = 'Выберете товар';
+            }
+            document.querySelector('.sum').innerHTML = 'Итого: ' + summa + ' р';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+    <main>
+        <p>
+            Мой баланс: <input type="number" value="100" class="balans">
+        </p>
+        
+        <table>
+            <tr>
+                <th></th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Количество</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Молоко</td>
+                <td>90 р</td>
+                <td><input type="number" min="0" value="2" class="milk"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Хлеб</td>
+                <td>50 р</td>
+                <td><input type="number" min="0" value="1" class="bread"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Яйца</td>
+                <td>100 р</td>
+                <td><input type="number" min="0" value="0" class="eggs"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Сыр</td>
+                <td>200 р</td>
+                <td><input type="number" min="0" value="0" class="cheese"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Огурцы</td>
+                <td>150 р/кг</td>
+                <td><input type="number" min="0" value="1" class="cucumber"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Помидоры</td>
+                <td>250 р/кг</td>
+                <td><input type="number" min="0" value="1" class="tomato"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Чай черный</td>
+                <td>150 р</td>
+                <td><input type="number" min="0" value="1" class="tea"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Сметана</td>
+                <td>80 р</td>
+                <td><input type="number" min="0" value="2" class="sour_cr"></td>
+            </tr>
+        </table>
+        <button onclick="buy()">Купить</button>
+        <p class="sum"></p>
+        <p class="output"></p>
+    </main>
+    <footer>
+        &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
