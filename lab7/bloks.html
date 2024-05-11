@@ -16,13 +16,30 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+
+        function addNewBlocks(){
+            let main = document.querySelector('main');
+            let num = document.querySelector('.num');
+            let width = 150;
+            for (let i = 0; i<num.value; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'paleturquoise';
+                newBlock.style.height = '40px';
+                newBlock.style.width = `${width += 20}px`;
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2* i**2}`;
+                main.appendChild(newBlock);
+            }  
+        }
     </script>
     <style>
         div{
             border: 1px solid white;
             margin: 10px;
             width: 400px;
-            height: 50px;
+            padding: 10px;
+        }
+        input{
+            width: 250px;
         }
     </style>
 </head>
@@ -31,7 +48,10 @@
         НГТУ, ФБ, Лабораторная работа 7
     </header>
     <main>
+        <input type="number" placeholder="Введите желаемое кол-во блоков" min="
+        0" class="num"> <br> <br>
         <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
     </main>
     <footer>
         &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
