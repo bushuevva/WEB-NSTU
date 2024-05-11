@@ -30,6 +30,21 @@
                 main.appendChild(newBlock);
             }  
         }
+
+        function add20_50(){
+            let main = document.querySelector('main');
+            for (let i = 20; i <=50; i+=2.5){
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'palevioletred';
+                newBlock.style.color = 'white';
+                newBlock.style.padding = '20px';
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
         div{
@@ -52,6 +67,7 @@
         0" class="num"> <br> <br>
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()"> 20 => 50</button>
     </main>
     <footer>
         &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
