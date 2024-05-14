@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бушуева Ирина Андреевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png" type="image/x-icon">
+    <script>
+        function getEuroExchangeRate(){
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+            fetch (url)
+                .then( function(response){
+                    return response.json();
+                })
+                .then( function(json){
+                    console.log(json);
+                    document.querySelector('.price').innerHTML ='Курс Евро по данным на: ' + json.Date + ' составляет: ' + json.Valute.EUR.Value + ' р ';
+                    document.querySelector('.prev').innerHTML = 'Курс Евро по данным на: ' + json.PreviousDate + ' составляет: ' + json.Valute.EUR.Previous + ' р ';
+                    document.querySelector('.razn').innerHTML = 'Разница между текущим значением курса и предыдущим составляет: ' + (json.Valute.EUR.Value - json.Valute.EUR.Previous).toFixed(4);
+                    if (json.Valute.EUR.Value - json.Valute.EUR.Previous > 0){
+                        document.querySelector('.text').innerHTML = 'Курс Евро поднялся'
+                    }
+                    else{
+                        document.querySelector('.inf').innerHTML = 'Курс Евро опустился'
+                    }
+                })
+        }
+    </script>
+    <style>
+        div{
+            margin: 10px auto;
+            border: 1px solid purple;
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            width: 700px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button onclick="getEuroExchangeRate()">Курс Евро</button>
+        <div>
+            <p class="price"></p>
+            <p class="prev"></p>
+            <p class="razn"></p>
+            <p class="inf"></p>
+        </div>
+
+        <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a> <br>
+        <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a> <br>
+        <a href="https://www.cbr-xml-daily.ru/">Виджет курсов валют</a> <br>
+        <a href="https://www.cbr-xml-daily.ru/">Курсы ЦБ РФ в XML и JSON, API</a>
+    </main>
+    <footer>
+        &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
