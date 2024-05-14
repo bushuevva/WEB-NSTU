@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бушуева Ирина Андреевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png" type="image/x-icon">
+    <script>
+        function BashNeft(){
+            const price = [
+            3378.00, 3386.00, 3358.50, 3362.50, 3315.00, 3386.00, 3415.00, 3353.50, 3366.00
+            ];
+            const data = [
+            '13.05.2024', '10.05.2024', '08.05.2024', '07.05.2024', '06.05.2024', '03.05.2024', '02.05.2024', '30.04.2024', '29.04.2024'
+            ];
+            let table = document.getElementById('table');
+            for (let i=0; i<price.length; i++){
+                let tr = document.createElement('tr');
+
+                let td1 = document.createElement('td');
+                td1.innerHTML = price[i];
+
+                let td2 = document.createElement('td');
+                td2.innerHTML = data[i];
+
+                let td3 = document.createElement('td');
+                if (i > 0){
+                    let razn = price[i] - price[i-1];
+                    razn = razn.toFixed(1)
+                    td3.innerHTML = razn;
+                }
+                else{
+                    td3.innerHTML = ' - ';
+                }
+                
+                tr.appendChild(td2);
+                tr.appendChild(td1);
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i =0; i<price.length; i++){
+                sum+=price[i];
+            }
+
+            let sredn = sum/price.length
+            sredn = sredn.toFixed(2);
+            const min = Math.min.apply(Math, price)
+            const max = Math.max.apply(Math, price)
+
+            document.querySelector('.sredn').innerHTML = 'Среднее значение стоимости акции: ' + sredn + ' р';
+            document.querySelector('.minim').innerHTML = 'Минимальное значение стоимости акции: ' + min + ' р';
+            document.querySelector('.maxim').innerHTML = 'Максимальное значение стоимости акции: ' + max + ' р';
+        }
+    </script>
+    <style>
+        button{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <button onclick="BashNeft()" class="but">Курс акций компании АНК «Башнефть»</button>
+        <table border="1" id="table"></table>
+        <p class="sredn"></p>
+        <p class="minim"></p>
+        <p class="maxim"></p>
+    </main>
+    <footer>
+        &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
