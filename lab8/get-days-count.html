@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бушуева Ирина Андреевна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png" type="image/x-icon">
+    <script src="get-days-count.js"></script>
+    <style>
+        div{
+            font-size: 14pt;
+            margin-top: 20px;
+        }
+        button{
+            border: 1px solid purple;
+            background-color: lavender;
+            color: purple;
+            border-radius: 10px;
+            padding: 3px;
+            font-size: 11pt;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+    <main>
+        <div>
+            <label> Дата рождения: <input type="date"></label>
+        </div>
+        <div>
+            <button onclick="ShowDaysCount()">Показать число дней</button> <br>
+            <div class="out"></div>
+        </div>
+        <div>
+            <button onclick="clearText()">Очистить данные</button>
+        </div>
+    </main>
+    <footer>
+        &copy; Ирина Бушуева, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
