@@ -29,3 +29,55 @@ function showDate(){
     const WeekD = ['Воскресенье', 'Понедельник','Вторник','Среда','Четверг','Пятница','Суббота']
     week.innerHTML = 'День недели: ' + WeekD[nowWeek];
 }
+
+function WeekD(){
+    let da = document.querySelector('.da').value;
+    let mo = document.querySelector('.mo').value;
+    let ye = document.querySelector('.ye').value;
+
+    let td = new Date(da);
+    document.querySelector('.out').innerHTML = 'Блабла ' + td;
+
+    let weekday = ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота', 'Воскресенье'];
+
+    let MoN;
+    if (mo == 'Январь' || mo == 'январь'){
+        MoN = 0;
+    }
+    else if (mo == 'Февраль' || mo == 'февраль'){
+        MoN = 1;
+    }
+    else if (mo == 'Март' || mo == 'март'){
+        MoN = 2;
+    }
+    else if (mo == 'Апрель' || mo == 'апрель'){
+        MoN = 3;
+    }
+    else if (mo == 'Май' || mo == 'май'){
+        MoN = 4;
+    }
+    else if (mo == 'Июнь' || mo == 'июнь'){
+        MoN = 5;
+    }
+    else if (mo == 'Июль' || mo == 'июль'){
+        MoN = 6;
+    }
+    else if (mo == 'Август' || mo == 'август'){
+        MoN = 7;
+    }
+    else if (mo == 'Сентябрь' || mo == 'сентябрь'){
+        MoN = 8;
+    }
+    else if (mo == 'Октябрь' || mo == 'октябрь'){
+        MoN = 9;
+    }
+    else if (mo == 'Ноябрь' || mo == 'ноябрь'){
+        MoN = 10;
+    }
+    else if (mo == 'Декабрь' || mo == 'декабрь'){
+        MoN = 11;
+    }
+    let d = new Date(ye, MoN, da);
+    let n = d.getUTCDay()
+    document.querySelector('.out').innerHTML = weekday[n];
+}
